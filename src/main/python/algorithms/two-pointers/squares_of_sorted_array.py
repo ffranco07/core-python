@@ -3,13 +3,12 @@ Given an integer array nums sorted in non-decreasing order,
 return an array of the squares of each number sorted in 
 non-decreasing order.
 
-Time Complexity: O(n)
-Space Complexity: O(n)
-
 """
 
 # Function which sorts array after doing squares of elements
-def sortSquares(arr, n):
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+def sort_squares(arr, n):
     left, right = 0, n - 1
     index = n - 1
     result = [0 for x in arr]
@@ -35,7 +34,7 @@ print("Before sort ")
 for i in range(n): 
     print(arr[i], end =" " ) 
      
-sortSquares(arr, n) 
+sort_squares(arr, n) 
 print("\nAfter Sort ") 
 for i in range(n): 
     print(arr[i], end =" " ) 

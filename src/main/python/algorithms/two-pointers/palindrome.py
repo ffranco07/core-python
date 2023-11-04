@@ -4,12 +4,11 @@ or dates of the year that reads the same both
 forward and backward. Examples are civic, radar, 
 level, rotor, kayak, madam, and refer
 
-Time Complexity: O(n)
-Space Complexity: O(1)
-
 """
 
 # Function to check if string is a palindrome
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 def check_if_palindrome(s):
     left = 0
     right = len(s) - 1

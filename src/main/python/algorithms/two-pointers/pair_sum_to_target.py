@@ -5,12 +5,11 @@ This problem is similar to Two Sum. (In Two Sum, the input is not sorted).
 
 For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13, return true because 4 + 9 = 13.
 
-Time Complexity: O(n)
-Space Complexity: O(1)
-
 """
 
 # Function to check if pair of nums sum up to target value
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 def check_for_target(nums, target):
     left = 0
     right = len(nums) - 1

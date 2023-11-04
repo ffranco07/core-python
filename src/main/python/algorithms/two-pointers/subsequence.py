@@ -5,13 +5,12 @@ A subsequence of a string is a sequence of characters that can be obtained by de
 some (or none) of the characters from the original string, while maintaining the relative 
 order of the remaining characters. For example, "ace" is a subsequence of "abcde" while "aec" is not.
 
-Time Complexity: O(n)
-Space Complexity: O(1)
-
 """
 
 # Function to check if string s is a subsequence of string t
-def isSubsequence(s: str, t: str):
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+def is_subsequence(s: str, t: str):
         i = j = 0
         while i < len(s) and j < len(t):
             if s[i] == t[j]:
@@ -22,5 +21,5 @@ def isSubsequence(s: str, t: str):
 
 str1 = "ace"
 str2 = "abcde"
-print("str1: " + str1 + " str2: " + str2 + " isSubsequence: " + str(isSubsequence(str1, str2)))
+print("str1: " + str1 + " str2: " + str2 + " isSubsequence: " + str(is_subsequence(str1, str2)))
 
