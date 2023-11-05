@@ -19,34 +19,38 @@ A sliding window algorithm
  means if the logic done for each window is O(1), sliding
  window algorithms run in O(n), which is much faster.
 
- Given a binary string s (containing only "0" and "1"). 
- You may choose up to one "0" and flip it to a "1". 
- What is the length of the longest substring achievable 
- that contains only "1"?
+ Given an array of positive integers nums and an integer 
+ k, return the number of subarrays where the product of 
+ all the elements in the subarray is strictly less than k.
  
- For example, given s = "1101100111", the answer is 5. 
- If you perform the flip at index 2, the string becomes 
- 1111100111.
+ For example, given the input nums = [10, 5, 2, 6], k = 100, 
+ the answer is 8. The subarrays with products less than k are:
 
+ [10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6]
+  
 """
 
-# Function to find longest substring only 1's after 0 flipped to 1
+# Function to find number of subarrays whose product is less than k
 # Time Complexity: O(n)
 # Space Complexity: O(1)
-def find_longest_substring_only_1s(s):
-     # curr is the current number of zeros in the window
-    left = curr = ans = 0 
-    for right in range(len(s)):
-        if s[right] == "0":
-            curr += 1
-        while curr > 1:
-            if s[left] == "0":
-                curr -= 1
+def num_subarray_product_less_than_k(nums, k):
+    if k <= 1:
+        return 0
+
+    ans = left = 0
+    curr = 1
+
+    for right in range(len(nums)):
+        curr *= nums[right]
+        while curr >= k:
+            curr //= nums[left]
             left += 1
-        ans = max(ans, right - left + 1)
-    
+        ans += right - left + 1
+
     return ans
 
-s = "1101100111"
-print("Orig: " + str(s)  + " longestSubstringOnly1s: " + str(find_longest_substring_only_1s(s)))
+ 
+nums = [10, 5, 2, 6]
+targetProduct = 100
+print("nums: " + str(nums)  + " targetProduct: " + str(targetProduct) + " numSubarrayProduct: " + str(num_subarray_product_less_than_k(nums, targetProduct)))
 
