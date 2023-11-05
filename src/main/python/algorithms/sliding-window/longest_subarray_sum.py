@@ -1,8 +1,7 @@
 """
-Given an array of positive integers nums and an integer k, 
-find the length of the longest subarray whose sum is less than or equal to k. 
+ Author: Francisco Franco
 
-A sliding window algorithm
+ A sliding window algorithm
  
  A subarray can be defined by two indices, 
  the start and end. For example, with [1, 2, 3, 4], 
