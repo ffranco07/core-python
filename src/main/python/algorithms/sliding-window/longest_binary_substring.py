@@ -19,31 +19,34 @@ A sliding window algorithm
  means if the logic done for each window is O(1), sliding
  window algorithms run in O(n), which is much faster.
 
- Given an array of positive integers nums and an integer
- k, find the length of the longest subarray whose sum is 
- less than or equal to k. 
+ Given a binary string s (containing only "0" and "1"). 
+ You may choose up to one "0" and flip it to a "1". 
+ What is the length of the longest substring achievable 
+ that contains only "1"?
+ 
+ For example, given s = "1101100111", the answer is 5. 
+ If you perform the flip at index 2, the string becomes 
+ 1111100111.
 
 """
 
 # Function to find longest subarray size less than or equal to target sum
 # Time Complexity: O(n)
 # Space Complexity: O(1)
-def find_longest_subarray(nums, k):
-    # curr is the current sum of the window
-    left = curr = ans = 0
-    for right in range(len(nums)):
-        curr += nums[right]
-        while curr > k:
-            curr -= nums[left]
+def find_longest_substring_only_1s(s):
+     # curr is the current number of zeros in the window
+    left = curr = ans = 0 
+    for right in range(len(s)):
+        if s[right] == "0":
+            curr += 1
+        while curr > 1:
+            if s[left] == "0":
+                curr -= 1
             left += 1
         ans = max(ans, right - left + 1)
     
-    print("left: " + str(left))
-    print("right: " + str(right))
-
     return ans
 
-nums = [0, -2, 0, -2, -1, 7]
-targetSum = 8
-print("nums: " + str(nums)  + " targetSum: " + str(targetSum) + " longestSubarray: " + str(find_longest_subarray(nums, targetSum)))
+s = "1101100111"
+print("Orig: " + str(s)  + " longestSubstringOnly1s: " + str(find_longest_substring_only_1s(s)))
 
