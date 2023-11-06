@@ -17,7 +17,7 @@
 
 """
 
-# Function to find subarray max sum for target size k
+# Function to return boolean array if prefix sum indices exceed limit
 # Without prefix sum, Time Complexity: O(n*m)
 # With prefix sum, Time Complexity: O(n+m)
 # Space Complexity: O(n)
