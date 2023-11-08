@@ -48,7 +48,7 @@ class BinaryTreeMaxDepth:
         
         return root
 
-    # Function to return max depth of tree recursively
+    # Recursive function to return max depth of tree
     # Time Complexity: O(n) where n is the number node in the tree
     # Space Complexity: O(n)
     def maxDepthRecursive(self, root:Node) -> int:
@@ -59,9 +59,9 @@ class BinaryTreeMaxDepth:
         right = self.maxDepthRecursive(root.right)
         return max(left, right) + 1
     
-    # Function to return max depth of tree iteratively
-    # # Time Complexity: O(n) where n is the number node in the tree
-    # # Space Complexity: O(n)
+    # Iterative function to return max depth of tree
+    # Time Complexity: O(n) where n is the number node in the tree
+    # Space Complexity: O(n)
     def maxDepthIterative(self, root:Node) -> int:
         if not root:
             return 0

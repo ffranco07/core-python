@@ -51,9 +51,9 @@ class BinaryTreePathSum:
         return root
     
     # Recursive function returns boolean if tree has path sum 
-    # for target sum value
-    # # Time Complexity: O(n) where n is the number of node in the tree
-    # # Space Complexity: O(n) 
+    # equal to target sum
+    # Time Complexity: O(n) where n is the number of node in the tree
+    # Space Complexity: O(n) 
     def hasPathSumRecursive(self, root: Node, targetSum: int) -> bool:
         def dfs(node, curr):
             if not node:
@@ -72,9 +72,9 @@ class BinaryTreePathSum:
     
 
     # Iterative function returns boolean if tree has path sum 
-    # for target sum value
-    # # Time Complexity: O(n) where n is the number of node in the tree
-    # # Space Complexity: O(n) 
+    # equal to target sum
+    # Time Complexity: O(n) where n is the number of node in the tree
+    # Space Complexity: O(n) 
     def hasPathSumIterative(self, root: Node, targetSum: int) -> bool:
         if not root:
             return False
