@@ -19,6 +19,9 @@
  Subtree: The descendants of a node.
  Forest: A collection of disjoint trees
 
+ Given the root of a binary tree, find the length of the longest 
+ path from the root to a leaf.
+
 """
 
 from node import Node
